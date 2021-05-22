@@ -11,7 +11,6 @@ class Repository{
         return false;
       }
       var responseModel = Weather.fromJson(response);
-      print("RESPONSE MODEL  IS ${responseModel.cityName}");
       return responseModel;
     }catch(e){
       print(e);

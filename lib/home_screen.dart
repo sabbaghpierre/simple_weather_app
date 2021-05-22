@@ -23,12 +23,12 @@ class HomeScreen extends StatelessWidget {
                 children: [
                   (state is WeatherLoading)
                       ? Center(
-                          child: CircularProgressIndicator(),
+                          child: CircularProgressIndicator(backgroundColor:Colors.white,),
                         )
                       : Container(),
                   (state is WeatherError)
                       ? Center(
-                          child: Text("ERROR"),
+                          child: Text("No Data Found.",style: TextStyle(color: Colors.white,),),
                         )
                       : Container(),
                   (state is WeatherSuccess)
@@ -71,7 +71,7 @@ class HomeScreen extends StatelessWidget {
               animation: "sun_cloud",
             )),
         Text(
-          "${weather.temperature} °C",
+          "${weather.temperature.toInt()} °C",
           style: GoogleFonts.lato(fontSize: 50, color: Colors.white),
         ),
       ],
